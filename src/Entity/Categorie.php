@@ -22,6 +22,7 @@ class Categorie
      */
     private $id;
 
+
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
@@ -52,6 +53,11 @@ class Categorie
      * @ORM\ManyToMany(targetEntity=BlogPost::class, mappedBy="categories")
      */
     private $blogPosts;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $plateNumber;
 
     public function __construct()
     {
@@ -176,5 +182,16 @@ class Categorie
         return $this;
     }
 
+    public function getPlateNumber(): ?string
+    {
+        return $this->plateNumber;
+    }
+
+    public function setPlateNumber(?string $plateNumber): self
+    {
+        $this->plateNumber = $plateNumber;
+
+        return $this;
+    }
 
 }

@@ -3,23 +3,24 @@
     <div class="col-md-3 left_col menu_fixed">
         <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-                <a href="{{ path('app_admin_index') }}" class="site_title"><i class="fa fa-paw"></i> <span>ONEHEALTH</span></a>
+                <a href="{{ path('app_admin_index') }}" class="site_title">
+                    <img src="/media/logo.png" style="width: 44px; height: 40px; padding-right: 10px"><span>MAJROM</span></a>
             </div>
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
-                <div class="profile_pic">
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <img src="{{ app.user.avatarUrl(50) }}" alt="..." class="img-circle profile_img">
-                    {% endif %}
-                </div>
-                <div class="profile_info">
-                    <span>{{ "backend.global.welcome"|trans }},</span>
-                    <h2>{{ app.user.nomComplet }}</h2>
-                </div>
-            </div>
+{#            <div class="profile clearfix">#}
+{#                <div class="profile_pic">#}
+{#                    {% if is_granted('ROLE_ADMIN') %}#}
+{#                    <img src="{{ app.user.avatarUrl(50) }}" alt="..." class="img-circle profile_img">#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#                <div class="profile_info">#}
+{#                    <span>{{ "backend.global.welcome"|trans }},</span>#}
+{#                    <h2>{{ app.user.nomComplet }}</h2>#}
+{#                </div>#}
+{#            </div>#}
             <!-- /menu profile quick info -->
 
             <br />
@@ -31,11 +32,17 @@
                         <li><a href="{{ path('app_admin_index') }}"><i class="fa fa-home"></i> {{ "backend.menu.home"|trans }}</a>
                         </li>
                         {% if is_granted("ROLE_SUPERUSER") %}
-                        <li><a><i class="fa fa-user"></i> {{ "backend.menu.user"|trans }} <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-user"></i>Flota<span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="{{ path('app_admin_users') }}">{{ "backend.menu.manage"|trans }}</a></li>
+                                <li><a href="{{ path('app_admin_fleet_gruszki') }}">Gruszki</a></li>
+                                <li><a href="{{ path('app_admin_fleet_pompy') }}">Pompy</a></li>
+                                <li><a href="{{ path('app_admin_fleet_pompogruszki') }}">Pompogruszki</a></li>
                             </ul>
-                        </li>
+                        </li><li><a><i class="fa fa-user"></i> {{ "backend.menu.user"|trans }} <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="{{ path('app_admin_users') }}">{{ "backend.menu.manage"|trans }}</a></li>
+                                </ul>
+                            </li>
                         {% endif %}
                         {% if is_granted("ROLE_WRITER") %}
                         <li><a><i class="fa fa-bookmark"></i>{{ "backend.menu.categories"|trans }} <span class="fa fa-chevron-down"></span></a>
