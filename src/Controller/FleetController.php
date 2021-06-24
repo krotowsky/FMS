@@ -53,7 +53,7 @@ class FleetController extends BaseController
         return $this->render("admin/categorie/categorie.html.twig",["categories"=>$categories]);
 
     }
-        /**
+    /**
      * @Route("/admin/categorie/new",name="app_admin_new_categorie")
      * @IsGranted("ROLE_WRITER")
      */
