@@ -36,23 +36,24 @@
                         {% if is_granted("ROLE_SUPERUSER") %}
                             <li><a><i class="fa fa-user"></i>Flota<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="{{ path('app_admin_fleet_gruszki') }}">Gruszki</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompy') }}">Pompy</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompogruszki') }}">Pompogruszki</a></li>
+                                    <li><a href="{{ path('app_admin_flota') }}">Wszystkie pojazdy</a></li>
+                                    <li><a href="{{ path('app_admin_flota_gruszki') }}">Gruszki</a></li>
+                                    <li><a href="{{ path('app_admin_flota_pompy') }}">Pompy</a></li>
+                                    <li><a href="{{ path('app_admin_flota_pompogruszki') }}">Pompogruszki</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-user"></i>Pracownicy<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="{{ path('app_admin_pracownik') }}">Pracownicy</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompy') }}">Urlopy</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompogruszki') }}">Badania</a></li>
+                                    <li><a href="{{ path('app_admin_pracownik') }}">Urlopy</a></li>
+                                    <li><a href="{{ path('app_admin_pracownik') }}">Badania</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-user"></i>Umowy<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="{{ path('app_admin_fleet_gruszki') }}">DOMBET</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompy') }}">FIRMA_1</a></li>
-                                    <li><a href="{{ path('app_admin_fleet_pompogruszki') }}">FIRMA_2</a></li>
+                                    <li><a href="{{ path('app_admin_pracownik') }}">DOMBET</a></li>
+                                    <li><a href="{{ path('app_admin_pracownik') }}">FIRMA_1</a></li>
+                                    <li><a href="{{ path('app_admin_pracownik') }}">FIRMA_2</a></li>
                                 </ul>
                             </li>
                         {% endif %}

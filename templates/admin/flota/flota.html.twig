@@ -1,0 +1,54 @@
+{% extends "admin/bars.html.twig" %}
+
+{% block contenpage %}
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h5> Pracownicy </h5>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a href="{{ path('app_admin_flota_new') }}" class="btn btn-success">NEW</a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <table id="example" class="display table table-striped table-bordered dataminetables" >
+                                <thead>
+                                <th>Id</th>
+                                <th>Model</th>
+                                <th>Marka</th>
+                                <th>numer tablicy</th>
+                                <th>vin</th>
+                                <th>typ</th>
+                                <th>Przebieg</th>
+                                </thead>
+                                <tbody>
+                                {% for item in items  %}
+{#                                    {{ dump(items) }}#}
+                                    <tr>
+                                        <td>{{ item.id }}</td>
+                                        <td>{{ item.model }}</td>
+                                        <td>{{ item.marka }}</td>
+                                        <td>{{ item.numer }}</td>
+                                        <td>{{ item.vin }}</td>
+                                        <td>{{ item.typ }}</td>
+                                        <td>{{ item.przebieg }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
